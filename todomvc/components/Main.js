@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import ui from 'redux-ui';
 
 const state = {
@@ -6,10 +6,12 @@ const state = {
     filter: 'all'
   }
 };
+const propTypes = {
+  ui: PropTypes.object
+};
 
 class Main extends React.Component {
   render() {
-    console.log('ui', this.props.ui);
     return (
       <div>
         Main
@@ -18,5 +20,6 @@ class Main extends React.Component {
   }
 }
 
+Main.propTypes = propTypes;
 const decoratedMain = ui(state)(Main);
 export default decoratedMain;

@@ -13,4 +13,4 @@ export default function configureStore(initialState) {
   // TODO support HMR
 
   return store;
-};
+}
