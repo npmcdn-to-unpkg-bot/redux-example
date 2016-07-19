@@ -6,7 +6,7 @@ import Counter from '../../components/Counter';
 const setup = (value = 0) => {
   const actions = {
     onIncrement: expect.createSpy(),
-    onDecrement: expect.createSpy()
+    onDecrement: expect.createSpy(),
   };
   const component = shallow(
     <Counter value={value} {...actions} />
@@ -16,7 +16,7 @@ const setup = (value = 0) => {
     component,
     actions,
     buttons: component.find('button'),
-    p: component.find('p')
+    p: component.find('p'),
   };
 };
 
@@ -64,4 +64,4 @@ describe('Counter component', () => {
       done();
     }, 1000);
   });
-})
+});

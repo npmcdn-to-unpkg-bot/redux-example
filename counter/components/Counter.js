@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 const propTypes = {
   value: PropTypes.number,
   onIncrement: PropTypes.func,
-  onDecrement: PropTypes.func
+  onDecrement: PropTypes.func,
 };
 
 const Counter = ({ value, onIncrement, onDecrement }) => {
@@ -15,7 +15,7 @@ const Counter = ({ value, onIncrement, onDecrement }) => {
   };
   const onIncrementAsync = () => {
     setTimeout(onIncrement, 1000);
-  }
+  };
 
   return (
     <p>
@@ -25,7 +25,7 @@ const Counter = ({ value, onIncrement, onDecrement }) => {
       <button onClick={onIncrementIfOdd}>Increase if odd</button>
       <button onClick={onIncrementAsync}>Increase async</button>
     </p>
-  )
+  );
 };
 
 Counter.propTypes = propTypes;
