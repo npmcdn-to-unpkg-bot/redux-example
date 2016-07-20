@@ -43,6 +43,8 @@ const initialState = [
 ];
 
 const reducer = (state = initialState, action) => {
+  let areAllMarked = false;
+
   switch (action.type) {
     case ADD_TODO:
       return [
@@ -65,10 +67,10 @@ const reducer = (state = initialState, action) => {
           return todo;
         }
 
-        return {
-          ...todo,
-          text: action.text
-        };
+        // return {...todo, text: action.text};
+        return Object.assign({}, todo,
+          { text: action.text }
+        );
       });
 
     case COMPLETE_TODO:
@@ -77,18 +79,19 @@ const reducer = (state = initialState, action) => {
           return todo;
         }
 
-        return {
-          ...todo,
-          completed: !todo.completed
-        };
+        return Object.assign({}, todo,
+          { completed: !todo.completed }
+        );
       });
 
     case COMPLETE_ALL:
-      const areAllMarked = state.every(todo => todo.completed);
-      return state.map(todo => ({
-        ...todo,
-        completed: !areAllMarked
-      }));
+      areAllMarked = state.every(todo => todo.completed);
+
+      return state.map(todo => (
+        Object.assign({}, todo,
+          { completed: !areAllMarked }
+        )
+      ));
 
     case CLEAR_COMPLETED:
       return state.filter(todo => (todo.completed === false));

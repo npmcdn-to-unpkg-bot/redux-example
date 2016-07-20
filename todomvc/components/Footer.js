@@ -62,7 +62,7 @@ const Footer = ({
   };
 
   return (
-    <footer ckassName="footer">
+    <footer className="footer">
       {renderTodoCount()}
       <ul className="filters">
         {[SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED].map(filterValue => (
