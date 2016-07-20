@@ -9,7 +9,7 @@ const propTypes = {
   newTodo: PropTypes.bool
 };
 
-const AddTodo = ({
+export const AddTodo = ({
   onSave,
   text,
   placeholder,

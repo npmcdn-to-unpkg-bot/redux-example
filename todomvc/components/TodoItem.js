@@ -13,7 +13,7 @@ const propTypes = {
   completeTodo: PropTypes.func.isRequired
 };
 
-const TodoItem = ({
+export const TodoItem = ({
   ui,
   updateUI,
   todo,

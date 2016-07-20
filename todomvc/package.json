@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --recursive --compilers js:babel-register --require ./test/setup.js",
+    "test:watch": "npm test -- --watch",
     "start": "webpack-dev-server --progress"
   },
   "keywords": [],
@@ -12,7 +13,11 @@
   "license": "ISC",
   "devDependencies": {
     "eslint-loader": "1.4.1",
+    "expect": "1.20.2",
+    "jsdom": "9.4.1",
+    "mocha": "2.5.3",
     "raw-loader": "0.5.1",
+    "react-addons-test-utils": "15.2.1",
     "style-loader": "0.13.1",
     "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
