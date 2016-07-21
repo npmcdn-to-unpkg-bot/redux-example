@@ -5,6 +5,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-      "comma-dangle": 0
+      "comma-dangle": 0,
+      "no-param-reassign": ["error", { "props": false }]
     }
 };
