@@ -11,7 +11,7 @@ const Product = ({
   title
 }) => (
   <div>
-    {title} - &#36;{price} {`x ${quantity}`}
+    {title} - &#36;{price} {quantity ? `x ${quantity}` : null}
   </div>
 );
 

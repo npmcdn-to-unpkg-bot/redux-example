@@ -16,7 +16,7 @@ export default function (initialState) {
   const store = createStore(
     reducers,
     initialState,
-    applyMiddleware(middlewares)
+    applyMiddleware(...middlewares)
   );
 
   return store;
