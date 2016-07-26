@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Redux shopping-cart example",
   "scripts": {
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "build": "NODE_ENV=production webpack --config ./webpack.config.prod.js --progress",
     "dev": "webpack-dev-server --progress",
     "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register",

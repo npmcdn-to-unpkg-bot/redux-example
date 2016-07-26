@@ -4,10 +4,10 @@ var webpack = require('webpack')
 console.log('env webpack', process.env.NODE_ENV);
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './index'
-  ],
+  entry: {
+    vendor: ['react', 'redux', 'react-dom', 'react-redux'],
+    app: './index'
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -16,6 +16,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
+    new webpack.ProvidePlugin({
+      React: 'react'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.BannerPlugin('@2016 loc.phan'),
     new webpack.EnvironmentPlugin([

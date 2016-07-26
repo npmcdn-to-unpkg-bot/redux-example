@@ -4,7 +4,9 @@ module.exports = {
     "plugins": [
         "react"
     ],
-    "fix": true,
+    "globals": {
+      "React": false
+    },
     "rules": {
       "comma-dangle": 0,
       "no-param-reassign": ["error", { "props": false }]
