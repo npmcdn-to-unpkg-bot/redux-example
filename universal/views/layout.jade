@@ -1,0 +1,11 @@
+doctype
+
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    title Redux Universal Counter Example
+  body
+    #root ${html}
+    script.
+      window.__INITIAL_STATE__ = !{JSON.stringify(initialState)}
+    script(src="/bundle.js")
